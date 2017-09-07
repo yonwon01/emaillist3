@@ -17,7 +17,7 @@ public class EmaillistController {
 	@Autowired
 	private EmaillistDao emaillistDao;
 	
-	@RequestMapping( "/index" )
+	@RequestMapping( "/" )
 	public String index(Model model) {
 		List<EmaillistVo> list = emaillistDao.getList();
 		model.addAttribute( "list", list );
@@ -33,6 +33,6 @@ public class EmaillistController {
 	public String insert(
 @ModelAttribute EmaillistVo emaillistVo) {
 		emaillistDao.insert( emaillistVo );
-		return "redirect:/index";
+		return "redirect:/";
 	}
 }

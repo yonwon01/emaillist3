@@ -1,3 +1,6 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
@@ -10,7 +13,7 @@
 		메일 리스트에 가입하려면,<br>
 		아래 항목을 기입하고 등록 버튼을 클릭하세요.
 	</p>
-	<form action="<%=request.getContextPath() %>/insert" method="post">
+	<form action="${pageContext.servletContext.contextPath }/insert" method="post">
 	    First name: <input type="text" name="firstName" value="" ><br>
 	    Last name: <input type="text" name="lastName" value=""><br>
 	    Email address: <input type="text" name="email" value=""><br>
@@ -18,7 +21,7 @@
 	</form>
 	<br>
 	<p>
-		<a href="<%=request.getContextPath() %>/index">리스트 바로가기</a>
+		<a href="${pageContext.servletContext.contextPath }">리스트 바로가기</a>
 	</p>
 </body>
 </html>
